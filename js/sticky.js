@@ -1,5 +1,6 @@
 const stickyMenu = document.querySelector('.sticky-menu');
 const menuItems = document.querySelectorAll('.sticky-menu a');
+const logo = document.querySelector('.logo');
 let lastScrollTop = 0;
 let isMenuVisible = true;
 
@@ -116,4 +117,39 @@ function openAboutDropdownSmoothly() {
     aboutMenuItem.classList.remove('active');
     dropdownContent.classList.remove('active');
   }
+}
+
+function hideMenu() {
+  const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const maxScrollTop = document.body.clientHeight - window.innerHeight;
+  const scrollPercentage = (currentScrollTop / maxScrollTop) * 100;
+
+  const opacity = 1 - scrollPercentage / 100;
+
+  stickyMenu.style.opacity = opacity;
+  menuItems.forEach((item) => {
+    item.style.opacity = opacity;
+  });
+
+  if (scrollPercentage >= 95) {
+    stickyMenu.style.display = 'none';
+    menuItems.forEach((item) => {
+      item.style.display = 'none';
+    });
+    isMenuVisible = false;
+  } else {
+    stickyMenu.style.display = 'block';
+    menuItems.forEach((item) => {
+      item.style.display = 'block';
+    });
+    isMenuVisible = true;
+  }
+
+  if (currentScrollTop > 100) { // Change 100 to the desired scroll position
+    logo.src = 'img/logo_en.png';
+  } else {
+    logo.src = 'img/logo.png';
+  }
+
+  lastScrollTop = currentScrollTop;
 }
