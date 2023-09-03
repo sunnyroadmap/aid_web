@@ -74,14 +74,34 @@ function hideDropdownContent() {
   missionSection.style.display = 'none';
 }
 
-window.addEventListener('click', (event) => {
+document.addEventListener('click', (event) => {
   const dropdown = document.querySelector('.dropdown-content');
   
   if (!event.target.closest('.dropdown')) {
     if (teamSection.style.display === 'block') {
       hideDropdownContent();
       aboutMenuItem.classList.remove('active');
-      dropdownContent.classList.remove('active');
+      dropdown.classList.remove('active'); 
     }
   }
 });
+
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.dropdown')) {
+    if (teamSection.style.display === 'block') {
+      hideDropdownContent();
+      aboutMenuItem.classList.remove('active');
+      dropdownContent.classList.remove('active'); // Add this line to remove 'active' class from dropdown
+    }
+  }
+});
+
+function showDropdownContent() {
+  teamSection.style.display = 'block';
+  missionSection.style.display = 'block';
+}
+
+function hideDropdownContent() {
+  teamSection.style.display = 'none';
+  missionSection.style.display = 'none';
+}
