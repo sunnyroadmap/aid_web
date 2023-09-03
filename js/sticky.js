@@ -73,3 +73,15 @@ function hideDropdownContent() {
   teamSection.style.display = 'none';
   missionSection.style.display = 'none';
 }
+
+window.addEventListener('click', (event) => {
+  const dropdown = document.querySelector('.dropdown-content');
+  
+  if (!event.target.closest('.dropdown')) {
+    if (teamSection.style.display === 'block') {
+      hideDropdownContent();
+      aboutMenuItem.classList.remove('active');
+      dropdownContent.classList.remove('active');
+    }
+  }
+});
