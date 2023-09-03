@@ -105,3 +105,15 @@ function hideDropdownContent() {
   teamSection.style.display = 'none';
   missionSection.style.display = 'none';
 }
+
+function openAboutDropdownSmoothly() {
+  if (teamSection.style.display === 'none') {
+    showDropdownContent();
+    aboutMenuItem.classList.add('active');
+    dropdownContent.classList.add('active');
+  } else {
+    hideDropdownContent();
+    aboutMenuItem.classList.remove('active');
+    dropdownContent.classList.remove('active');
+  }
+}
