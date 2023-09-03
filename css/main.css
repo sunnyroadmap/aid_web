@@ -212,7 +212,7 @@ body {
   margin: 1em;
 }
 
-#minolink a {
+#monolink a {
   text-decoration: none;
   font-size: 1.3em;
   color: #fff;
@@ -354,7 +354,6 @@ body {
 .dropdown-content {
   display: none; /* Initially hide the submenu items */
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5); 
   min-width: 160px;
   z-index: 1;
   flex-direction: row;
@@ -486,7 +485,7 @@ body {
 
 .team-section,
 .mission-section {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -501,5 +500,5 @@ body {
 .bottom-icon {
     width: 50px; 
     height: auto;
-    margin-top: 10px; /* CSL */
+    margin-top: 10px;
 }
