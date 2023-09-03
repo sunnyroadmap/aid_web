@@ -153,3 +153,4 @@ function hideMenu() {
 
   lastScrollTop = currentScrollTop;
 }
+
