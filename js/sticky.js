@@ -37,17 +37,20 @@ window.addEventListener('scroll', hideMenu);
 const aboutMenuItem = document.querySelector('.sticky-menu .dropdown a');
 const teamSection = document.querySelector('.team-section');
 const missionSection = document.querySelector('.mission-section');
+const dropdownContent = document.querySelector('.dropdown-content'); // Added this line
 
 aboutMenuItem.addEventListener('click', (event) => {
   event.preventDefault();
   event.stopPropagation();
-  
+
   if (teamSection.style.display === 'none') {
     showDropdownContent();
     aboutMenuItem.classList.add('active');
+    dropdownContent.classList.add('active'); // Added this line
   } else {
     hideDropdownContent();
     aboutMenuItem.classList.remove('active');
+    dropdownContent.classList.remove('active'); // Added this line
   }
 });
 
@@ -56,13 +59,14 @@ window.addEventListener('click', (event) => {
     if (teamSection.style.display === 'block') {
       hideDropdownContent();
       aboutMenuItem.classList.remove('active');
+      dropdownContent.classList.remove('active'); // Added this line
     }
   }
 });
 
 function showDropdownContent() {
-  teamSection.style.display = 'block';
-  missionSection.style.display = 'block';
+  teamSection.style.display = 'flex'; // Change to flex
+  missionSection.style.display = 'flex'; // Change to flex
 }
 
 function hideDropdownContent() {

@@ -351,12 +351,20 @@ body {
 .dropdown-content .mission-section {
   display: none;
 }
+
+/* Initially hide the submenu items */
 .dropdown-content {
-  display: none; /* Initially hide the submenu items */
+  display: none;
   position: absolute;
+  background-color: rgba(0, 0, 0, 0); /* Set the initial background to transparent */
   min-width: 160px;
   z-index: 1;
   flex-direction: row;
+}
+
+/* Display the background when the dropdown is active */
+.dropdown-content.active {
+  background-color: rgba(0, 0, 0, 0.5); /* Set the background to semi-transparent black when active */
 }
 
 .dropdown-content a {
