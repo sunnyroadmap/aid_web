@@ -1,6 +1,9 @@
 // Define the translations variable at a higher scope
 let translations = {};
 
+// Define the language switcher element
+const languageSwitcher = document.querySelector('.language-switcher');
+
 // Function to load translations from a JSON file
 function loadTranslations(callback) {
   fetch('locale/translations.json') // Replace with the correct path to your translations file
@@ -32,9 +35,13 @@ function translateContent(selectedLang) {
 // Add click event listener to the language switcher
 languageSwitcher.addEventListener('click', (event) => {
   event.preventDefault();
-  const selectedLang = event.target.getAttribute('data-lang');
-  languageSwitcher.setAttribute('data-selected-lang', selectedLang);
-  translateContent(selectedLang);
+  
+  // Ensure that the clicked element has the data-lang attribute
+  if (event.target.getAttribute('data-lang')) {
+    const selectedLang = event.target.getAttribute('data-lang');
+    languageSwitcher.setAttribute('data-selected-lang', selectedLang);
+    translateContent(selectedLang);
+  }
 });
 
 // Initial translation based on the selected language
