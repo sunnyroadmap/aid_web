@@ -185,7 +185,7 @@ body {
 }
 
 .copy-link-input:hover {
-  /* background: #9d822b; */
+
 }
 
 .copy-link-button {
@@ -358,7 +358,7 @@ body {
   position: absolute;
   background-color: rgba(0, 0, 0, 0); /* Set the initial background to transparent */
   min-width: 160px;
-  z-index: 1;
+  z-index: 100;
   flex-direction: row;
 }
 
@@ -547,7 +547,7 @@ body {
   position: fixed;
   top: 80px;
   right: 150px; /* Adjust the right position to create spacing */
-  z-index: 100;
+  z-index: 99;
   opacity: 0.7;
   transition: opacity 0.3s ease-in-out;
   display: flex; /* Add display: flex */
@@ -562,6 +562,7 @@ body {
   padding: 10px 20px;
   border-radius: 50px;
   margin-left: 10px;
+  z-index: 99;
 }
 
 /* Style the login button */
