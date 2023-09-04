@@ -1,9 +1,6 @@
 // Define the translations variable at a higher scope
 let translations = {};
 
-// Define the language switcher element
-const languageSwitcher = document.querySelector('.language-switcher');
-
 // Function to load translations from a JSON file
 function loadTranslations(callback) {
   fetch('locale/translations.json') // Replace with the correct path to your translations file
