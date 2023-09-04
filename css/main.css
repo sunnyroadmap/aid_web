@@ -511,52 +511,50 @@ body {
     margin-top: 10px;
 }
 
-/* Style the language switcher container */
+/* Style for the language switcher container */
 .language-switcher-container {
   position: fixed;
-  top: 20px; 
-  right: 20px; 
-  z-index: 100; 
-  opacity: 0.7; 
-  transition: opacity 0.3s ease-in-out; 
+  top: 80px;
+  right: 20px;
+  z-index: 100;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
 }
 
-/* Style the language switcher */
+/* Style for the language switcher */
 .language-switcher {
   text-decoration: none;
   color: #fff;
   padding: 5px 10px;
   border: 1px solid #333;
-  border-radius: 20px; 
+  border-radius: 20px;
+  margin-right: 10px; /* Add margin-right to create spacing */
 }
 
-/* Style the dropdown content (languages) */
+/* Style for the dropdown content (languages) */
 .language-switcher-container .dropdown-content {
   display: none;
   position: absolute;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  top: 30px; /* Adjust the top position to align with the button */
+  right: 0; /* Adjust the right position to align with the button */
 }
 
-.language-switcher-container .dropdown-content a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #333;
-}
-
-/* Style the login button container */
+/* Style for the login button container */
 .login-button-container {
   position: fixed;
-  top: 20px; 
-  right: 120px; 
-  z-index: 100; 
-  opacity: 0.7; 
-  transition: opacity 0.3s ease-in-out; 
+  top: 80px;
+  right: 150px; /* Adjust the right position to create spacing */
+  z-index: 100;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+  display: flex; /* Add display: flex */
+  align-items: center; /* Center vertically */
 }
 
-/* Style the login button */
+/* Style for the login button */
 .login-button {
   text-decoration: none;
   color: #fff;
@@ -565,7 +563,6 @@ body {
   border-radius: 50px;
   margin-left: 10px;
 }
-
 
 /* Style the login button */
 .login-button a {
@@ -579,9 +576,69 @@ body {
 
 /* Style for flag icons */
 .flag-icon {
-  width: 20px; 
-  height: 15px;
-  margin-right: 15px;
-  margin-bottom: 5px;
+  width: 100%; /* Make the flag fill the container */
+  height: 100%; /* Make the flag fill the container */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 50%; /* Make it a circle if the container is circular */
+}
 
+/* Style for the flag container */
+.flag-container {
+  position: fixed; /* Make it fixed to stay in place */
+  top: 30px; /* Adjust the top position */
+  right: 80px; /* Adjust the right position */
+  cursor: pointer;
+}
+
+/* Style the language flags */
+.language-flag {
+  width: 20px;
+  height: 15px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Style the selected flag */
+.flag-selected {
+  transform: scale(1.2); /* Increase the size of the selected flag */
+  z-index: 2;
+}
+
+/* Style the dropdown content (languages) */
+.flag-container .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 25px; /* Adjust the top position to overlap with the selected flag */
+  left: -10px; /* Adjust the left position to overlap with the shape */
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 3;
+}
+
+/* Style the language flags in the dropdown */
+.flag-container .dropdown-content .language-flag {
+  width: 20px;
+  height: 15px;
+  margin: 5px;
+  border: 1px solid #333;
+  border-radius: 50%;
+}
+
+/* Show the dropdown on hover */
+.flag-container:hover .dropdown-content {
+  display: block;
+}
+
+/* Style for the flags in the dropdown */
+.flag-dropdown {
+  width: 30px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  margin-right: 10px; /* Add margin between flags if needed */
+  border: 1px solid #333;
+  border-radius: 5px; /* Add rounded corners if desired */
 }
