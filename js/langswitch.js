@@ -11,12 +11,37 @@ function toggleDropdown(dropdown) {
   }
 }
 
-// Add a click event listener to the language switcher
-languageSwitcher.addEventListener('click', (event) => {
+// Function to handle language selection
+function handleLanguageSelection(event) {
   event.preventDefault();
   event.stopPropagation();
+
+  // Check if a language data attribute is present
+  const selectedLang = event.target.getAttribute('data-lang');
+
+  if (selectedLang) {
+    // Change the selected flag to the chosen language
+    const selectedFlag = languageSwitcher.querySelector('.flag-selected');
+    selectedFlag.src = `img/${selectedLang}.png`;
+
+    // Close the dropdown
+    toggleDropdown(languageDropdown);
+  }
+}
+
+// Add a click event listener to the language switcher
+languageSwitcher.addEventListener('click', (event) => {
+  handleLanguageSelection(event);
   // Toggle the visibility of the language dropdown
   toggleDropdown(languageDropdown);
+});
+
+// Add click event listeners to language options in the dropdown
+const languageOptions = languageDropdown.querySelectorAll('a');
+languageOptions.forEach((option) => {
+  option.addEventListener('click', (event) => {
+    handleLanguageSelection(event);
+  });
 });
 
 // Add a click event listener to the document to close the dropdown when clicking outside
@@ -24,24 +49,4 @@ document.addEventListener('click', (event) => {
   if (languageDropdown.style.display === 'block' && !event.target.closest('.language-switcher-container')) {
     languageDropdown.style.display = 'none';
   }
-});
-
-// Add click event listeners to language options
-const languageOptions = document.querySelectorAll('.dropdown-content a');
-const flagIcon = document.querySelector('.language-flag');
-
-languageOptions.forEach((option) => {
-  option.addEventListener('click', (event) => {
-    event.preventDefault();
-    const selectedLang = option.getAttribute('data-lang');
-    const flagImg = option.querySelector('.flag-icon');
-
-    // Update the flag icon with the selected language's flag
-    flagIcon.src = flagImg.src;
-    
-    // You can also handle language-specific actions here
-    
-    // Hide the dropdown
-    languageDropdown.style.display = 'none';
-  });
 });
