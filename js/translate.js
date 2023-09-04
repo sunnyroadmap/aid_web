@@ -44,8 +44,11 @@ languageOptions.forEach((option) => {
     });
   });
   
-  // Initial translation based on the selected language
-  const initialSelectedLang = languageSwitcher.getAttribute('data-selected-lang');
-  loadTranslations(() => {
-    translateContent(initialSelectedLang);
-  });
+// Initial translation based on the selected language
+const initialSelectedLang = languageSwitcher.getAttribute('data-selected-lang');
+loadTranslations(() => {
+  translateContent(initialSelectedLang);
+});
+
+
+  
