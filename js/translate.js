@@ -58,4 +58,4 @@ languageOptions.forEach((option) => {
       languageSwitcher.setAttribute('data-selected-lang', selectedLang);
       translateContent(translations, selectedLang);
     });
-  });
+  }); 
