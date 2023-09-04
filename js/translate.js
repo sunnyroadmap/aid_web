@@ -34,21 +34,18 @@ function translateContent(selectedLang) {
 
 // Add click event listeners to language options in the dropdown
 languageOptions.forEach((option) => {
-    option.addEventListener('click', (event) => {
-      event.preventDefault();
-      const selectedLang = option.getAttribute('data-lang');
-  
-      // Update the selected language and translate content
-      languageSwitcher.setAttribute('data-selected-lang', selectedLang);
-      translateContent(selectedLang);
-    });
+  option.addEventListener('click', (event) => {
+    event.preventDefault();
+    const selectedLang = option.getAttribute('data-lang');
+
+    // Update the selected language and translate content
+    languageSwitcher.setAttribute('data-selected-lang', selectedLang);
+    translateContent(selectedLang);
   });
-  
+});
+
 // Initial translation based on the selected language
 const initialSelectedLang = languageSwitcher.getAttribute('data-selected-lang');
 loadTranslations(() => {
   translateContent(initialSelectedLang);
 });
-
-
-  
