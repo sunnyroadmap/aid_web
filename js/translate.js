@@ -46,7 +46,7 @@ languageLinks.forEach((link) => {
 });
 
 // Initial translation based on the selected language
-const initialSelectedLang = languageSwitcher.getAttribute('data-selected-lang');
+const initialSelectedLang = languageLinks.getAttribute('data-selected-lang');
 loadTranslations(() => {
   translateContent(initialSelectedLang);
 });
