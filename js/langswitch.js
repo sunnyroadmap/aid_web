@@ -11,12 +11,6 @@ function toggleDropdown(dropdown) {
   }
 }
 
-// Set initial position for the flag container
-const flagContainer = document.querySelector('.flag-container');
-flagContainer.style.position = 'fixed';
-flagContainer.style.top = '20px'; // Adjust the initial top position
-flagContainer.style.right = '20px'; // Adjust the initial right position
-
 // Add a click event listener to the language switcher
 languageSwitcher.addEventListener('click', (event) => {
   event.preventDefault();

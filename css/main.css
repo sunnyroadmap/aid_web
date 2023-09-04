@@ -633,8 +633,9 @@ body {
   display: block;
 }
 
-/* Style for the flags in the dropdown */
+/* Flags in Dropdown Styles */
 .flag-dropdown {
+  /* Style for the flags in the dropdown */
   width: 30px; /* Adjust the width as needed */
   height: 20px; /* Adjust the height as needed */
   margin-right: 10px; /* Add margin between flags if needed */
