@@ -1,6 +1,9 @@
 // Define the translations variable at a higher scope
 let translations = {};
 
+// Define the languageLinks variable to store language option elements
+const languageLinks = document.querySelectorAll('.dropdown-content a');
+
 // Function to load translations from a JSON file
 function loadTranslations(callback) {
   fetch('locale/translations.json') // Replace with the correct path to your translations file
@@ -16,29 +19,29 @@ function loadTranslations(callback) {
 
 // Function to translate content based on the selected language
 function translateContent(selectedLang) {
+  console.log('Translating to:', selectedLang); // Debug
   const elementsToTranslate = document.querySelectorAll('[data-translate]');
-
+  
   elementsToTranslate.forEach((element) => {
     const translationKey = element.getAttribute('data-translate');
-    const translatedText = translations[selectedLang][translationKey];
-
-    if (translatedText) {
-      element.textContent = translatedText;
+    
+    // Check if translations[selectedLang] and translations[selectedLang][translationKey] are defined
+    if (translations[selectedLang] && translations[selectedLang][translationKey]) {
+      element.textContent = translations[selectedLang][translationKey];
     }
   });
 }
 
-// Rest of the code remains the same
-
 // Add click event listeners to language options in the dropdown
-languageOptions.forEach((option) => {
-  option.addEventListener('click', (event) => {
+languageLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
     event.preventDefault();
-    const selectedLang = option.getAttribute('data-lang');
-
-    // Update the selected language and translate content
-    languageSwitcher.setAttribute('data-selected-lang', selectedLang);
-    translateContent(selectedLang);
+    
+    // Ensure that the clicked element has the data-lang attribute
+    if (event.target.getAttribute('data-lang')) {
+      const selectedLang = event.target.getAttribute('data-lang');
+      translateContent(selectedLang);
+    }
   });
 });
 
