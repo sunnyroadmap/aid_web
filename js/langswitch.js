@@ -25,3 +25,23 @@ document.addEventListener('click', (event) => {
     languageDropdown.style.display = 'none';
   }
 });
+
+// Add click event listeners to language options
+const languageOptions = document.querySelectorAll('.dropdown-content a');
+const flagIcon = document.querySelector('.language-flag');
+
+languageOptions.forEach((option) => {
+  option.addEventListener('click', (event) => {
+    event.preventDefault();
+    const selectedLang = option.getAttribute('data-lang');
+    const flagImg = option.querySelector('.flag-icon');
+
+    // Update the flag icon with the selected language's flag
+    flagIcon.src = flagImg.src;
+    
+    // You can also handle language-specific actions here
+    
+    // Hide the dropdown
+    languageDropdown.style.display = 'none';
+  });
+});
