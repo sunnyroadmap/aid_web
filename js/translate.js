@@ -1,3 +1,5 @@
+let translations = {};
+
 function loadTranslations(callback) {
     fetch('locale/translations.json')
       .then((response) => response.json())
