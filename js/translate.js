@@ -1,5 +1,9 @@
+
 // Define the translations variable at a higher scope
 let translations = {};
+
+// Define the languageOptions variable to store language option elements
+const languageOptions = document.querySelectorAll('.dropdown-content a');
 
 // Function to load translations from a JSON file
 function loadTranslations(callback) {
@@ -27,23 +31,20 @@ function translateContent(selectedLang) {
     }
   });
 }
-
-// Rest of the code remains the same
-
 // Add click event listeners to language options in the dropdown
 languageOptions.forEach((option) => {
-  option.addEventListener('click', (event) => {
-    event.preventDefault();
-    const selectedLang = option.getAttribute('data-lang');
-
-    // Update the selected language and translate content
-    languageSwitcher.setAttribute('data-selected-lang', selectedLang);
-    translateContent(selectedLang);
+    option.addEventListener('click', (event) => {
+      event.preventDefault();
+      const selectedLang = option.getAttribute('data-lang');
+  
+      // Update the selected language and translate content
+      languageSwitcher.setAttribute('data-selected-lang', selectedLang);
+      translateContent(selectedLang);
+    });
   });
-});
-
-// Initial translation based on the selected language
-const initialSelectedLang = languageSwitcher.getAttribute('data-selected-lang');
-loadTranslations(() => {
-  translateContent(initialSelectedLang);
-});
+  
+  // Initial translation based on the selected language
+  const initialSelectedLang = languageSwitcher.getAttribute('data-selected-lang');
+  loadTranslations(() => {
+    translateContent(initialSelectedLang);
+  });
