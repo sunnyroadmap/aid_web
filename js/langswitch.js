@@ -1,4 +1,5 @@
 // Get references to the language switcher and dropdown content
+const languageSwitcher = document.querySelector('.language-switcher');
 const languageDropdown = document.querySelector('.language-switcher + .dropdown-content');
 const languageSwitcherContainer = document.querySelector('.language-switcher-container');
 
