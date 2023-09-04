@@ -30,8 +30,8 @@ function loadTranslations(callback) {
   
   // Rest of the code remains the same
   
-  // Add click event listeners to language options in the dropdown
-  languageOptions.forEach((option) => {
+// Add click event listeners to language options in the dropdown
+languageOptions.forEach((option) => {
     option.addEventListener('click', (event) => {
       event.preventDefault();
       const selectedLang = option.getAttribute('data-lang');
@@ -48,3 +48,14 @@ function loadTranslations(callback) {
     translateContent(translations, initialSelectedLang);
   });
   
+  // Add click event listeners to language options in the dropdown
+languageOptions.forEach((option) => {
+    option.addEventListener('click', (event) => {
+      event.preventDefault();
+      const selectedLang = option.getAttribute('data-lang');
+  
+      // Update the selected language and translate content
+      languageSwitcher.setAttribute('data-selected-lang', selectedLang);
+      translateContent(translations, selectedLang);
+    });
+  });
