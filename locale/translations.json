@@ -1,9 +1,11 @@
 {
     "en": {
-      "nav_home": "Home",
-      "nav_about": "About Us",
-      "nav_services": "Services",
-      "nav_contact": "Contact Us",
+      "home": "Home",
+      "about": "About",
+      "our-team": "Our Team",
+      "mission": "Mission",
+      "services": "Services",
+      "contact": "Contact",
       "homepage_welcome": "Welcome to our website!",
       "homepage_intro": "We provide quality services to meet your needs.",
       "about_us": "About Us",
