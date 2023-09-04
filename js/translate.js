@@ -39,13 +39,13 @@ languageOptions.forEach((option) => {
       const selectedLang = option.getAttribute('data-lang');
   
       // Update the selected language and translate content
-      languageSwitcher.setAttribute('data-selected-lang', selectedLang);
+      languageSwitcher.setAttribute('data-lang', selectedLang);
       translateContent(selectedLang);
     });
   });
   
 // Initial translation based on the selected language
-const initialSelectedLang = languageSwitcher.getAttribute('data-selected-lang');
+const initialSelectedLang = languageSwitcher.getAttribute('data-lang');
 loadTranslations(() => {
   translateContent(initialSelectedLang);
 });
