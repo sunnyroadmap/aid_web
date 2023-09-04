@@ -1,14 +1,18 @@
+// Define the translations variable at a higher scope
+let translations = {};
+
 // Function to load translations from a JSON file
 function loadTranslations(callback) {
-    fetch('locale/translations.json') // Replace with the path to your translations file
-      .then((response) => response.json())
-      .then((data) => {
-        callback(data);
-      })
-      .catch((error) => {
-        console.error('Translation file load error:', error);
-      });
-  }
+  fetch('/locale/translations.json') // Replace with the correct path to your translations file
+    .then((response) => response.json())
+    .then((data) => {
+      translations = data; // Store the loaded translations in the global variable
+      callback(data);
+    })
+    .catch((error) => {
+      console.error('Translation file load error:', error);
+    });
+}
   
   // Function to translate content based on the selected language
   function translateContent(translations, selectedLang) {
