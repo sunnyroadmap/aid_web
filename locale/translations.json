@@ -1,0 +1,54 @@
+{
+    "en": {
+      "nav_home": "Home",
+      "nav_about": "About Us",
+      "nav_services": "Services",
+      "nav_contact": "Contact Us",
+      "homepage_welcome": "Welcome to our website!",
+      "homepage_intro": "We provide quality services to meet your needs.",
+      "about_us": "About Us",
+      "about_content": "Learn more about our company and mission.",
+      "services": "Services",
+      "contact_us": "Contact Us",
+      "contact_intro": "Get in touch with us for inquiries and support.",
+      "contact_name": "Name",
+      "contact_email": "Email",
+      "contact_message": "Message",
+      "contact_submit": "Submit"
+    },
+    "ua": {
+      "nav_home": "Головна",
+      "nav_about": "Про нас",
+      "nav_services": "Послуги",
+      "nav_contact": "Зв'яжіться з нами",
+      "homepage_welcome": "Ласкаво просимо на наш веб-сайт!",
+      "homepage_intro": "Ми надаємо якісні послуги, щоб задовольнити ваші потреби.",
+      "about_us": "Про нас",
+      "about_content": "Дізнайтеся більше про нашу компанію та місію.",
+      "services": "Послуги",
+      "contact_us": "Зв'яжіться з нами",
+      "contact_intro": "Зв'яжіться з нами для запитів та підтримки.",
+      "contact_name": "Ім'я",
+      "contact_email": "Електронна пошта",
+      "contact_message": "Повідомлення",
+      "contact_submit": "Відправити"
+    },
+    "est": {
+      "nav_home": "Avaleht",
+      "nav_about": "Meist",
+      "nav_services": "Teenused",
+      "nav_contact": "Kontakteeru meiega",
+      "homepage_welcome": "Tere tulemast meie veebisaidile!",
+      "homepage_intro": "Pakume kvaliteetseid teenuseid, et rahuldada teie vajadusi.",
+      "about_us": "Meist",
+      "about_content": "Lisateabe saamiseks meie ettevõtte ja missiooni kohta.",
+      "services": "Teenused",
+      "contact_us": "Kontakteeru meiega",
+      "contact_intro": "Võtke meiega ühendust päringute ja toe saamiseks.",
+      "contact_name": "Nimi",
+      "contact_email": "E-post",
+      "contact_message": "Sõnum",
+      "contact_submit": "Saada"
+    }
+  }
+  
