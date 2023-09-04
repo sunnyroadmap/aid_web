@@ -31,6 +31,7 @@ function translateContent(selectedLang) {
     }
   });
 }
+
 // Add click event listeners to language options in the dropdown
 languageOptions.forEach((option) => {
     option.addEventListener('click', (event) => {
