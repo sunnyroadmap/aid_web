@@ -1,9 +1,9 @@
-
 // Define the translations variable at a higher scope
 let translations = {};
 
 // Define the languageOptions variable to store language option elements
 const languageOptions = document.querySelectorAll('.dropdown-content a');
+const languageSwitcher = document.querySelector('.language-switcher'); // You need to define this element
 
 // Function to load translations from a JSON file
 function loadTranslations(callback) {
