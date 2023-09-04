@@ -582,11 +582,10 @@ body {
   border-radius: 50%; /* Make it a circle if the container is circular */
 }
 
-/* Style for the flag container */
 .flag-container {
   position: fixed; /* Make it fixed to stay in place */
-  top: 30px; /* Adjust the top position */
-  right: 80px; /* Adjust the right position */
+  top: 20px; /* Adjust the initial top position */
+  right: 20px; /* Adjust the initial right position */
   cursor: pointer;
 }
 
@@ -620,7 +619,7 @@ body {
   z-index: 3;
 }
 
-/* Style the language flags in the dropdown */
+/* Style for the language flags in the dropdown */
 .flag-container .dropdown-content .language-flag {
   width: 20px;
   height: 15px;
