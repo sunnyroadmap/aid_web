@@ -3,7 +3,7 @@ let translations = {};
 
 // Function to load translations from a JSON file
 function loadTranslations(callback) {
-  fetch('aid_web/locale/translations.json') // Replace with the correct path to your translations file
+  fetch('locale/translations.json') // Replace with the correct path to your translations file
     .then((response) => response.json())
     .then((data) => {
       translations = data; // Store the loaded translations in the global variable
